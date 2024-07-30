@@ -15,6 +15,7 @@ def app():
         uploaded_image = st.file_uploader("Upload image", type=['jpg', 'jpeg', 'png'])
         selected_objects = st.multiselect('Choose objects to detect', object_names, default=['person']) 
         min_confidence = st.slider('Confidence score', 0.0, 1.0)
+        st.write(min_confidence)
         st.form_submit_button(label='Submit')
             
     if uploaded_image is not None: 
