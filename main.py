@@ -37,7 +37,7 @@ def app():
                 object_name =  model.names[cls]
                 label = f'{object_name} {score}'
 
-                if model.names[cls] in selected_objects and score > min_confidence:
+                if model.names[cls] in selected_objects and score < min_confidence:
                     cv2.rectangle(image, (x0, y0), (x1, y1), (255, 0, 0), 2)
                     cv2.putText(image, label, (x0, y0 - 10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
