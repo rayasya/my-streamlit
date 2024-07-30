@@ -46,8 +46,8 @@ def app():
             detections = result[0].verbose()
             cv2.putText(image, detections, (10, 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-            #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  
-            st.image(image, caption='Detected Objects', use_column_width=True)
+            image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  
+            st.image(image_rgb, caption='Detected Objects', use_column_width=True)
 
             # Delete temporary files after processing
             if os.path.exists(input_path):
